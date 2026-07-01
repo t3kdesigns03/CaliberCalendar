@@ -91,10 +91,12 @@ export default function Navigation() {
           </div>
         </div>
 
-        <div className={cn(
-          'lg:hidden overflow-hidden transition-all duration-300 ease-in-out',
-          open ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
-        )}>
+        <div
+          className={cn(
+            'lg:hidden overflow-hidden transition-all duration-300 ease-in-out',
+            open ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
+          )}
+        >
           <div className="bg-[#0E243A] border-t border-white/[0.08] px-4 py-6 space-y-1">
             {NAV_LINKS.map(({ label, href }) => (
               <Link
@@ -126,8 +128,11 @@ export default function Navigation() {
         </div>
       </header>
 
-      {/* Floating mobile CTA */}
-      <div className="fixed bottom-5 inset-x-4 z-40 lg:hidden pointer-events-none">
+      {/* Floating mobile CTA — delayed slide-in so it doesn't cover hero stats on load */}
+      <div
+        className="fixed bottom-5 inset-x-4 z-40 lg:hidden pointer-events-none animate-fade-in"
+        style={{ animationDelay: '1.2s', animationFillMode: 'both', opacity: 0 }}
+      >
         <Link
           href="#book-call"
           className="pointer-events-auto flex items-center justify-center gap-2 w-full bg-emerald-600 hover:bg-emerald-500 text-white font-semibold py-4 rounded-2xl shadow-emerald-glow transition-all active:scale-[0.98]"

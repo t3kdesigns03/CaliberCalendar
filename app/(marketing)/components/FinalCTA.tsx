@@ -71,8 +71,14 @@ export default function FinalCTA() {
   }
 
   return (
-    <section id="book-call" className="py-24 lg:py-32 section-divider section-alt relative overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+    <section
+      id="book-call"
+      className="py-24 lg:py-32 section-divider section-alt relative overflow-hidden"
+    >
+      <div
+        className="absolute inset-0 pointer-events-none overflow-hidden"
+        aria-hidden="true"
+      >
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-emerald-700/20 rounded-full blur-[140px]" />
         <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-emerald-500/50 to-transparent" />
         <div className="absolute -top-40 -left-40 w-[500px] h-[500px] bg-blue-900/20 rounded-full blur-[120px]" />
@@ -88,7 +94,7 @@ export default function FinalCTA() {
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-start">
 
-          {/* ── Left: qualifier copy ────────────────────────── */}
+          {/* Left: qualifier copy */}
           <div>
             <div className="inline-flex items-center gap-2 bg-emerald-600/10 border border-emerald-600/20 rounded-full px-4 py-2 mb-8">
               <span className="relative flex h-2 w-2 shrink-0">
@@ -103,16 +109,21 @@ export default function FinalCTA() {
               <span className="gradient-text">and Start Closing?</span>
             </h2>
             <p className="text-slate-400 text-lg leading-relaxed mb-8">
-              Caliber Calendar is built for elite producers who are serious about scaling. If you have a
-              proven close process and want a consistent flow of pre-educated, high-net-worth prospects
-              who actually show — this call is your next step.
+              Caliber Calendar is built for elite producers who are serious about scaling.
+              If you have a proven close process and want a consistent flow of pre-educated,
+              high-net-worth prospects who actually show — this call is your next step.
             </p>
 
             <div className="space-y-3 mb-8">
-              <p className="text-slate-500 text-xs font-semibold uppercase tracking-[0.15em]">This is the right fit if you:</p>
+              <p className="text-slate-500 text-xs font-semibold uppercase tracking-[0.15em]">
+                This is the right fit if you:
+              </p>
               {QUALIFIERS.map((q) => (
                 <div key={q} className="flex items-start gap-3">
-                  <CheckCircle className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" strokeWidth={2.5} />
+                  <CheckCircle
+                    className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"
+                    strokeWidth={2.5}
+                  />
                   <span className="text-slate-300 text-sm">{q}</span>
                 </div>
               ))}
@@ -121,36 +132,43 @@ export default function FinalCTA() {
             <div className="bg-emerald-600/[0.08] border border-emerald-600/20 rounded-xl p-4 flex items-start gap-3">
               <TrendingUp className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
               <div>
-                <div className="text-emerald-300 font-semibold text-sm mb-0.5">Pay-Per-Show. Always.</div>
-                <div className="text-slate-400 text-xs">If a prospect doesn't show, you don't pay. That's the model. No exceptions.</div>
+                <div className="text-emerald-300 font-semibold text-sm mb-0.5">
+                  Pay-Per-Show. Always.
+                </div>
+                <div className="text-slate-400 text-xs">
+                  If a prospect doesn't show, you don't pay. That's the model. No exceptions.
+                </div>
               </div>
             </div>
           </div>
 
-          {/* ── Right: lead capture form ────────────────────── */}
+          {/* Right: lead capture form */}
           <div id="qualify">
             <div className="bg-[#0E243A] border border-white/10 rounded-2xl p-7 lg:p-8">
 
               {status === 'success' ? (
-                /* ── Success state ── */
                 <div className="text-center py-10">
                   <div className="w-16 h-16 bg-emerald-600/15 border border-emerald-600/30 rounded-full flex items-center justify-center mx-auto mb-5">
                     <CheckCheck className="w-8 h-8 text-emerald-400" />
                   </div>
                   <h3 className="text-white font-bold text-xl mb-2">Application Received</h3>
                   <p className="text-slate-400 text-sm leading-relaxed max-w-xs mx-auto">
-                    We'll review your application and reach out within 1 business day to schedule your discovery call.
+                    We'll review your application and reach out within 1 business day to
+                    schedule your discovery call.
                   </p>
                   <div className="mt-6 text-emerald-400 text-xs font-medium">
                     Check your inbox — including spam just in case.
                   </div>
                 </div>
               ) : (
-                /* ── Form ── */
                 <>
                   <div className="mb-6">
-                    <h3 className="text-white font-bold text-lg mb-1">Apply for a Discovery Call</h3>
-                    <p className="text-slate-500 text-xs">Takes 60 seconds · We'll reach out within 1 business day</p>
+                    <h3 className="text-white font-bold text-lg mb-1">
+                      Apply for a Discovery Call
+                    </h3>
+                    <p className="text-slate-500 text-xs">
+                      Takes 60 seconds · We'll reach out within 1 business day
+                    </p>
                   </div>
 
                   <form
@@ -158,16 +176,22 @@ export default function FinalCTA() {
                     onSubmit={handleSubmit}
                     className="space-y-4"
                   >
-                    {/* Netlify hidden fields */}
                     <input type="hidden" name="form-name" value="advisor-application" />
                     <p className="hidden" aria-hidden="true">
-                      <label>Don't fill this out: <input name="bot-field" onChange={(e) => set('bot-field', e.target.value)} /></label>
+                      <label>
+                        Don't fill this out:{' '}
+                        <input
+                          name="bot-field"
+                          onChange={(e) => set('bot-field', e.target.value)}
+                        />
+                      </label>
                     </p>
 
-                    {/* Name + Phone row */}
                     <div className="grid sm:grid-cols-2 gap-3">
                       <div>
-                        <label className="block text-slate-400 text-xs font-medium mb-1.5">Full Name *</label>
+                        <label className="block text-slate-400 text-xs font-medium mb-1.5">
+                          Full Name *
+                        </label>
                         <input
                           type="text"
                           name="full-name"
@@ -179,7 +203,9 @@ export default function FinalCTA() {
                         />
                       </div>
                       <div>
-                        <label className="block text-slate-400 text-xs font-medium mb-1.5">Phone *</label>
+                        <label className="block text-slate-400 text-xs font-medium mb-1.5">
+                          Phone *
+                        </label>
                         <input
                           type="tel"
                           name="phone"
@@ -192,9 +218,10 @@ export default function FinalCTA() {
                       </div>
                     </div>
 
-                    {/* Email */}
                     <div>
-                      <label className="block text-slate-400 text-xs font-medium mb-1.5">Business Email *</label>
+                      <label className="block text-slate-400 text-xs font-medium mb-1.5">
+                        Business Email *
+                      </label>
                       <input
                         type="email"
                         name="email"
@@ -206,9 +233,10 @@ export default function FinalCTA() {
                       />
                     </div>
 
-                    {/* Monthly production */}
                     <div>
-                      <label className="block text-slate-400 text-xs font-medium mb-1.5">Current Monthly Production</label>
+                      <label className="block text-slate-400 text-xs font-medium mb-1.5">
+                        Current Monthly Production
+                      </label>
                       <select
                         name="production"
                         value={form.production}
@@ -223,9 +251,10 @@ export default function FinalCTA() {
                       </select>
                     </div>
 
-                    {/* Appointments target */}
                     <div>
-                      <label className="block text-slate-400 text-xs font-medium mb-1.5">Target Appointments per Month</label>
+                      <label className="block text-slate-400 text-xs font-medium mb-1.5">
+                        Target Appointments per Month
+                      </label>
                       <select
                         name="appointments"
                         value={form.appointments}
@@ -240,9 +269,11 @@ export default function FinalCTA() {
                       </select>
                     </div>
 
-                    {/* Optional message */}
                     <div>
-                      <label className="block text-slate-400 text-xs font-medium mb-1.5">Anything else? <span className="text-slate-600">(optional)</span></label>
+                      <label className="block text-slate-400 text-xs font-medium mb-1.5">
+                        Anything else?{' '}
+                        <span className="text-slate-600">(optional)</span>
+                      </label>
                       <textarea
                         name="message"
                         rows={2}
@@ -256,7 +287,12 @@ export default function FinalCTA() {
                     {status === 'error' && (
                       <p className="text-red-400 text-xs text-center">
                         Something went wrong — email us directly at{' '}
-                        <a href="mailto:hello@calibercalendar.com" className="underline">hello@calibercalendar.com</a>
+                        <a
+                          href="mailto:hello@calibercalendar.com"
+                          className="underline"
+                        >
+                          hello@calibercalendar.com
+                        </a>
                       </p>
                     )}
 
@@ -268,8 +304,17 @@ export default function FinalCTA() {
                       {status === 'loading' ? (
                         <>
                           <svg className="animate-spin w-4 h-4" viewBox="0 0 24 24" fill="none">
-                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"/>
-                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"/>
+                            <circle
+                              className="opacity-25"
+                              cx="12" cy="12" r="10"
+                              stroke="currentColor"
+                              strokeWidth="4"
+                            />
+                            <path
+                              className="opacity-75"
+                              fill="currentColor"
+                              d="M4 12a8 8 0 018-8v8H4z"
+                            />
                           </svg>
                           Submitting…
                         </>
@@ -291,7 +336,10 @@ export default function FinalCTA() {
 
             <div className="mt-5 text-center text-slate-500 text-sm">
               Prefer email?{' '}
-              <a href="mailto:hello@calibercalendar.com" className="text-emerald-400 hover:text-emerald-300 transition-colors font-medium">
+              <a
+                href="mailto:hello@calibercalendar.com"
+                className="text-emerald-400 hover:text-emerald-300 transition-colors font-medium"
+              >
                 hello@calibercalendar.com →
               </a>
             </div>

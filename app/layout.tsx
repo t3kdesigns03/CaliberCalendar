@@ -34,7 +34,8 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'ProfessionalService',
   name: 'Caliber Calendar',
-  description: 'Pay-Per-Show qualified appointment service for elite financial advisors and annuity producers. Pre-educated $500K–$2M+ asset prospects, confirmed and showing.',
+  description:
+    'Pay-Per-Show qualified appointment service for elite financial advisors and annuity producers. Pre-educated $500K+ asset prospects, confirmed and showing.',
   url: 'https://calibercalendar.com',
   serviceType: 'Appointment Setting Service',
   areaServed: 'United States',
