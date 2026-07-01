@@ -9,7 +9,7 @@ export default function MarketingLayout({ children }: { children: React.ReactNod
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-start justify-between gap-10">
             <div className="max-w-xs">
-              <div className="text-2xl font-extrabold tracking-tight text-white mb-1">
+              <div className="font-heading text-2xl font-extrabold tracking-tight text-white mb-1">
                 JB<span className="text-[#C5A46E]">Advantage</span>
               </div>
               <p className="text-[#C5A46E] text-xs font-medium tracking-wide mb-3">

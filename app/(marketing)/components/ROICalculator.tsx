@@ -94,7 +94,7 @@ export default function ReviewRequestForm() {
             <span className="w-1.5 h-1.5 rounded-full bg-[#C5A46E]" />
             It Takes Under 2 Minutes
           </div>
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4 tracking-tight">
+          <h2 className="font-heading text-4xl sm:text-5xl font-bold text-white mb-4 tracking-tight">
             Request Your Free Retirement Review
           </h2>
           <p className="text-slate-300 text-xl max-w-2xl mx-auto">
@@ -109,7 +109,7 @@ export default function ReviewRequestForm() {
               <div className="w-16 h-16 bg-[#C5A46E]/[0.12] border border-[#C5A46E]/30 rounded-full flex items-center justify-center mx-auto mb-5">
                 <CheckCheck className="w-8 h-8 text-[#C5A46E]" />
               </div>
-              <h3 className="text-white font-bold text-xl mb-2">We Received Your Request!</h3>
+              <h3 className="font-heading text-white font-bold text-xl mb-2">We Received Your Request!</h3>
               <p className="text-slate-400 text-sm leading-relaxed max-w-xs mx-auto">
                 Thank you for reaching out. Someone from our team will be in touch within
                 1 business day to schedule your free retirement review.
@@ -121,7 +121,7 @@ export default function ReviewRequestForm() {
           ) : (
             <>
               <div className="mb-7">
-                <h3 className="text-white font-bold text-lg mb-1">
+                <h3 className="font-heading text-white font-bold text-lg mb-1">
                   Let us know a little about your situation
                 </h3>
                 <p className="text-slate-500 text-xs">

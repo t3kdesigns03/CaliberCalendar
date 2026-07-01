@@ -29,7 +29,7 @@ export default function RiskProfileBanner() {
                 <span className="w-1.5 h-1.5 rounded-full bg-[#C5A46E]" />
                 Free · 2 Minutes
               </div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2 leading-tight">
+              <h2 className="font-heading text-2xl sm:text-3xl font-bold text-white mb-2 leading-tight">
                 What Is Your Retirement Risk Comfort Zone?
               </h2>
               <p className="text-slate-300 text-base leading-relaxed max-w-lg">

@@ -51,17 +51,17 @@ export default function FAQAccordion() {
   const [open, setOpen] = useState<number | null>(null)
 
   return (
-    <section id="faq" className="py-24 lg:py-32 bg-[#FAF8F5]">
+    <section id="faq" className="py-28 lg:py-36 bg-[#FAF8F5]">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div className="text-center mb-14">
-          <div className="navy-badge justify-center mb-6 text-xs font-semibold tracking-widest uppercase">
+        <div className="text-center mb-16">
+          <div className="navy-badge justify-center mb-7">
             Common Questions
           </div>
-          <h2 className="text-4xl sm:text-5xl font-bold text-[#0F2C5A] mb-4 tracking-tight">
+          <h2 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-[#0F2C5A] mb-5 tracking-tight leading-[1.1]">
             Frequently Asked Questions
           </h2>
-          <p className="text-slate-500 text-xl max-w-xl mx-auto">
+          <p className="text-slate-500 text-xl max-w-xl mx-auto leading-relaxed font-light">
             Everything you need to know about the free retirement review.
           </p>
         </div>
@@ -73,26 +73,28 @@ export default function FAQAccordion() {
               <div
                 key={i}
                 className={cn(
-                  'card-premium overflow-hidden',
-                  isOpen && 'border-[#C5A46E]/30 shadow-card'
+                  'card-premium overflow-hidden transition-all duration-200',
+                  isOpen && 'border-[#C5A46E]/28 shadow-card'
                 )}
               >
                 <button
                   onClick={() => setOpen(isOpen ? null : i)}
-                  className="w-full flex items-start justify-between gap-4 text-left px-6 py-5 group"
+                  className="w-full flex items-start justify-between gap-5 text-left px-7 py-5 group"
                   aria-expanded={isOpen}
                 >
                   <span className={cn(
-                    'font-semibold text-sm leading-snug transition-colors',
+                    'font-medium text-sm leading-snug transition-colors',
                     isOpen ? 'text-[#C5A46E]' : 'text-[#0F2C5A] group-hover:text-[#C5A46E]'
                   )}>
                     {q}
                   </span>
                   <span className={cn(
                     'shrink-0 w-6 h-6 rounded-full flex items-center justify-center transition-colors mt-0.5',
-                    isOpen ? 'bg-[#C5A46E]/15 text-[#C5A46E]' : 'bg-slate-100 text-slate-400 group-hover:bg-[#C5A46E]/10 group-hover:text-[#C5A46E]'
+                    isOpen
+                      ? 'bg-[#C5A46E]/15 text-[#C5A46E]'
+                      : 'bg-slate-100 text-slate-400 group-hover:bg-[#C5A46E]/10 group-hover:text-[#C5A46E]'
                   )}>
-                    {isOpen ? <Minus className="w-3.5 h-3.5" /> : <Plus className="w-3.5 h-3.5" />}
+                    {isOpen ? <Minus className="w-3 h-3" /> : <Plus className="w-3 h-3" />}
                   </span>
                 </button>
                 <div
@@ -101,7 +103,7 @@ export default function FAQAccordion() {
                     isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                   )}
                 >
-                  <div className="px-6 pb-6 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-4">
+                  <div className="px-7 pb-6 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-4">
                     {a}
                   </div>
                 </div>
@@ -110,7 +112,7 @@ export default function FAQAccordion() {
           })}
         </div>
 
-        <div className="mt-10 text-center">
+        <div className="mt-12 text-center">
           <p className="text-slate-500 text-sm">
             Still have questions?{' '}
             <a href="#review-form" className="text-[#C5A46E] font-semibold hover:underline">

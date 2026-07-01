@@ -33,7 +33,7 @@ export default function FinalCTA() {
           Free retirement reviews. Clear guidance. No pressure.
         </div>
 
-        <h2 className="text-4xl sm:text-5xl font-bold text-white mb-5 tracking-tight leading-tight">
+        <h2 className="font-heading text-4xl sm:text-5xl font-bold text-white mb-5 tracking-tight leading-tight">
           Ready to Get Clear on{' '}
           <span className="gradient-text">Your Retirement Picture?</span>
         </h2>
