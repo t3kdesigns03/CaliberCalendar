@@ -15,31 +15,28 @@ export default function Hero() {
 
       {/* ── Backgrounds ──────────────────────────────────────── */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-        {/* Dot grid */}
+        {/* Very subtle dot grid */}
         <div
-          className="absolute inset-0 opacity-[0.04]"
+          className="absolute inset-0 opacity-[0.035]"
           style={{
-            backgroundImage: 'radial-gradient(rgba(255,255,255,0.55) 1px, transparent 1px)',
-            backgroundSize: '28px 28px',
+            backgroundImage: 'radial-gradient(rgba(255,255,255,0.5) 1px, transparent 1px)',
+            backgroundSize: '32px 32px',
           }}
         />
-        {/* Glow orbs */}
-        <div className="absolute -top-48 -left-24 w-[750px] h-[750px] bg-emerald-500/20 rounded-full blur-[180px]" />
-        <div className="absolute -bottom-24 -right-24 w-[600px] h-[600px] bg-blue-700/15 rounded-full blur-[160px]" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1100px] h-[600px] bg-emerald-900/25 rounded-full blur-[200px]" />
+        {/* Restrained glow orbs — accent only, not background fill */}
+        <div className="absolute -top-64 -left-32 w-[600px] h-[600px] bg-emerald-600/[0.09] rounded-full blur-[160px]" />
+        <div className="absolute top-1/4 -right-48 w-[500px] h-[500px] bg-blue-700/[0.08] rounded-full blur-[140px]" />
         {/* Top hairline */}
-        <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-emerald-500/35 to-transparent" />
-        {/* Bottom fade */}
-        <div className="absolute bottom-0 inset-x-0 h-48 bg-gradient-to-t from-[#0A192F] to-transparent" />
+        <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-emerald-500/25 to-transparent" />
       </div>
 
       {/* ── Content ──────────────────────────────────────────── */}
-      <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 lg:pt-32">
+      <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 lg:pt-24">
 
         {/* ════════════════════════════════════════════════════
             LOGO — the brand anchor
         ════════════════════════════════════════════════════ */}
-        <div className="mb-10 sm:mb-12 lg:mb-14">
+        <div className="mb-8 sm:mb-10 lg:mb-12">
 
           {/* Glow halo sits behind the logo */}
           <div className="relative inline-flex">
@@ -67,7 +64,7 @@ export default function Hero() {
           </div>
 
           {/* Thin emerald rule — anchors the logo visually */}
-          <div className="mt-6 sm:mt-8 w-16 sm:w-20 h-px bg-gradient-to-r from-emerald-500/70 to-transparent" />
+          <div className="mt-5 sm:mt-6 w-14 sm:w-16 h-px bg-gradient-to-r from-emerald-500/60 to-transparent" />
         </div>
 
         {/* ── Trust badges ─────────────────────────────────── */}
