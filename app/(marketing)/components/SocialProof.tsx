@@ -16,7 +16,7 @@ const STATS = [
 
 export default function SocialProof() {
   return (
-    <section className="py-24 lg:py-32 section-divider">
+    <section className="py-24 lg:py-32 section-divider section-alt">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 bg-emerald-600/10 border border-emerald-600/20 rounded-full px-4 py-2 mb-6">
@@ -38,7 +38,7 @@ export default function SocialProof() {
 
         <div className="grid md:grid-cols-2 gap-6">
           {TESTIMONIALS.map(({ initials, name, title, location, stars, quote, highlight }) => (
-            <div key={name} className="bg-[#0E243A] border border-white/[0.08] rounded-2xl p-7 hover:border-white/[0.14] transition-colors duration-200">
+            <div key={name} className="card-gradient-border rounded-2xl p-7 transition-all duration-200 hover:-translate-y-0.5">
               <Quote className="w-7 h-7 text-emerald-600/40 mb-4" />
               <div className="flex gap-0.5 mb-3">
                 {[...Array(stars)].map((_, i) => <Star key={i} className="w-3.5 h-3.5 text-yellow-400 fill-current" />)}

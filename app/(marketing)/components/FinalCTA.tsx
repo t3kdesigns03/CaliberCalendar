@@ -10,9 +10,11 @@ const QUALIFIERS = [
 
 export default function FinalCTA() {
   return (
-    <section id="book-call" className="py-24 lg:py-32 section-divider relative overflow-hidden">
+    <section id="book-call" className="py-24 lg:py-32 section-divider section-alt relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-emerald-700/10 rounded-full blur-[120px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-emerald-700/20 rounded-full blur-[140px]" />
+        <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-emerald-500/50 to-transparent" />
+        <div className="absolute -top-40 -left-40 w-[500px] h-[500px] bg-blue-900/20 rounded-full blur-[120px]" />
         {/* Brand watermark */}
         <Image
           src="/logo-light.svg"

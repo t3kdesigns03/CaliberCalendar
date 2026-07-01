@@ -1,9 +1,11 @@
+/* ── Google Fonts — MUST be first in file ───────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300..900;1,14..32,300..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-
+/* ── Base reset ─────────────────────────────────────────── */
 @layer base {
   *, *::before, *::after { box-sizing: border-box; }
 
@@ -15,6 +17,10 @@
 
   body {
     background-color: #0A192F;
+    /* Ambient top glow so the page isn't a flat wall of navy */
+    background-image:
+      radial-gradient(ellipse 110% 55% at 50% -5%, rgba(5,150,105,0.10) 0%, transparent 65%),
+      radial-gradient(ellipse 60% 40% at 80% 20%,  rgba(13,80,140,0.12) 0%, transparent 55%);
     color: #F8FAFC;
     font-family: 'Inter', system-ui, sans-serif;
   }
@@ -25,33 +31,67 @@
   }
 }
 
+/* ── Utilities ──────────────────────────────────────────── */
 @layer utilities {
+
+  /* Glassmorphism nav */
   .glass-nav {
-    background: rgba(10, 25, 47, 0.82);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    background: rgba(10, 25, 47, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 
+  /* Section rhythm — alternate between base navy and a noticeable darker tone */
+  .section-alt {
+    background-color: #060F1C;
+    background-image:
+      radial-gradient(ellipse 90% 60% at 50% 100%, rgba(5,150,105,0.06) 0%, transparent 70%);
+  }
+
+  /* Subtle mid-tone for cards/panels that need to stand out */
   .card-glass {
-    background: rgba(16, 42, 67, 0.55);
-    border: 1px solid rgba(255, 255, 255, 0.07);
+    background: rgba(16, 42, 67, 0.60);
+    border: 1px solid rgba(255, 255, 255, 0.09);
     backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
   }
 
+  /* Gradient headline text */
   .gradient-text {
-    background: linear-gradient(135deg, #ffffff 0%, #34d399 100%);
+    background: linear-gradient(135deg, #ffffff 30%, #34d399 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
+  /* Thin rule between sections */
   .section-divider {
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
   }
 
-  .emerald-glow    { box-shadow: 0 0 30px rgba(5,150,105,0.4); }
-  .emerald-glow-sm { box-shadow: 0 0 16px rgba(5,150,105,0.3); }
+  /* Emerald glow helpers */
+  .emerald-glow    { box-shadow: 0 0 40px rgba(5,150,105,0.50), 0 0 80px rgba(5,150,105,0.20); }
+  .emerald-glow-sm { box-shadow: 0 0 24px rgba(5,150,105,0.38); }
+
+  /* Gradient border card  */
+  .card-gradient-border {
+    position: relative;
+    background: #0E243A;
+    isolation: isolate;
+  }
+  .card-gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(5,150,105,0.35) 0%, rgba(255,255,255,0.06) 50%, transparent 100%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
 }
 
 /* ── Range slider ───────────────────────────────────────── */
@@ -73,7 +113,7 @@ input[type='range']::-webkit-slider-thumb {
   border-radius: 50%;
   background: #059669;
   border: 3px solid #0A192F;
-  box-shadow: 0 0 0 2px #059669, 0 2px 8px rgba(5,150,105,0.5);
+  box-shadow: 0 0 0 2px #059669, 0 2px 8px rgba(5,150,105,0.55);
   cursor: pointer;
   transition: box-shadow 0.15s ease, background 0.15s ease;
 }
@@ -81,7 +121,7 @@ input[type='range']::-webkit-slider-thumb {
 input[type='range']::-webkit-slider-thumb:hover,
 input[type='range']::-webkit-slider-thumb:active {
   background: #10b981;
-  box-shadow: 0 0 0 4px rgba(5,150,105,0.3), 0 2px 12px rgba(5,150,105,0.6);
+  box-shadow: 0 0 0 4px rgba(5,150,105,0.30), 0 2px 12px rgba(5,150,105,0.65);
 }
 
 input[type='range']::-moz-range-thumb {
@@ -95,8 +135,8 @@ input[type='range']::-moz-range-thumb {
   transition: all 0.15s ease;
 }
 
-/* ── Scrollbar ──────────────────────────────────────────── */
+/* ── Custom scrollbar ───────────────────────────────────── */
 ::-webkit-scrollbar        { width: 8px; }
-::-webkit-scrollbar-track  { background: #0A192F; }
+::-webkit-scrollbar-track  { background: #060F1C; }
 ::-webkit-scrollbar-thumb  { background: #1E3A5F; border-radius: 4px; }
 ::-webkit-scrollbar-thumb:hover { background: #2a5280; }

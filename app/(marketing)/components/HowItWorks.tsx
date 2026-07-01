@@ -22,7 +22,7 @@ const STEPS = [
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-24 lg:py-32 section-divider">
+    <section id="how-it-works" className="py-24 lg:py-32 section-divider section-alt">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
           <div className="inline-flex items-center gap-2 bg-emerald-600/10 border border-emerald-600/20 rounded-full px-4 py-2 mb-6">
@@ -40,10 +40,10 @@ export default function HowItWorks() {
           {STEPS.map(({ number, icon: Icon, title, description, highlight }) => (
             <div
               key={number}
-              className={`relative rounded-2xl p-7 transition-all duration-200 ${
+              className={`relative rounded-2xl p-7 transition-all duration-200 hover:-translate-y-0.5 ${
                 highlight
-                  ? 'bg-emerald-600/10 border border-emerald-600/30 hover:border-emerald-500/50'
-                  : 'bg-[#0E243A] border border-white/[0.08] hover:border-white/[0.16]'
+                  ? 'bg-emerald-600/[0.12] border border-emerald-500/40 hover:border-emerald-400/60 shadow-[0_0_40px_rgba(5,150,105,0.15)]'
+                  : 'card-gradient-border hover:shadow-[0_8px_32px_rgba(0,0,0,0.4)]'
               }`}
             >
               <div className="text-[10px] font-bold tracking-[0.2em] text-slate-600 mb-4 uppercase">Step {number}</div>

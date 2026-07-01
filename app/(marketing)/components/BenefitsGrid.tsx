@@ -31,7 +31,7 @@ export default function BenefitsGrid() {
           {BENEFITS.map(({ icon: Icon, title, description, stat, statLabel }) => (
             <div
               key={title}
-              className="group bg-[#0E243A] border border-white/[0.08] hover:border-white/[0.16] rounded-2xl p-7 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-card"
+              className="group card-gradient-border rounded-2xl p-7 transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
             >
               <div className="flex items-start justify-between mb-5">
                 <div className="w-11 h-11 rounded-xl bg-emerald-600/10 border border-emerald-600/20 flex items-center justify-center group-hover:bg-emerald-600/15 transition-colors">

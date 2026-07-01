@@ -20,17 +20,20 @@ export default function Hero() {
     // pb-28 on mobile gives clearance above the fixed floating CTA button
     <section className="relative min-h-screen flex items-center overflow-hidden pt-16 pb-28 lg:pb-0">
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+        {/* Dot grid */}
         <div
-          className="absolute inset-0 opacity-[0.025]"
+          className="absolute inset-0 opacity-[0.045]"
           style={{
-            backgroundImage:
-              'linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)',
-            backgroundSize: '52px 52px',
+            backgroundImage: 'radial-gradient(rgba(255,255,255,0.6) 1px, transparent 1px)',
+            backgroundSize: '28px 28px',
           }}
         />
-        <div className="absolute -top-32 -left-48 w-[600px] h-[600px] bg-emerald-700/15 rounded-full blur-[140px]" />
-        <div className="absolute bottom-0 -right-48 w-[500px] h-[500px] bg-blue-700/10 rounded-full blur-[140px]" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] bg-emerald-900/20 rounded-full blur-[180px]" />
+        {/* Ambient glow orbs — much more visible */}
+        <div className="absolute -top-40 -left-32 w-[700px] h-[700px] bg-emerald-500/25 rounded-full blur-[160px]" />
+        <div className="absolute -bottom-20 -right-32 w-[600px] h-[600px] bg-blue-600/20 rounded-full blur-[160px]" />
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-emerald-800/30 rounded-full blur-[200px]" />
+        {/* Sharp accent line at top */}
+        <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-emerald-500/40 to-transparent" />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-36">
@@ -61,9 +64,9 @@ export default function Hero() {
         </div>
 
         {/* ── Headline ─────────────────────────────────────── */}
-        <h1 className="text-4xl sm:text-5xl lg:text-[72px] font-extrabold text-white leading-[1.06] tracking-tight mb-5 lg:mb-7 max-w-4xl">
-          Only Pay for Wealth & Annuity Appointments{' '}
-          <span className="text-emerald-400">That Actually Show.</span>
+        <h1 className="text-4xl sm:text-5xl lg:text-[72px] font-extrabold leading-[1.06] tracking-tight mb-5 lg:mb-7 max-w-4xl">
+          <span className="text-white">Only Pay for Wealth &amp; Annuity Appointments </span>
+          <span className="gradient-text">That Actually Show.</span>
         </h1>
 
         {/* ── Sub-headline ─────────────────────────────────── */}

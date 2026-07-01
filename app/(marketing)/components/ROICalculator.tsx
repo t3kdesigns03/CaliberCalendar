@@ -72,7 +72,10 @@ export default function ROICalculator() {
   const fmtK              = (v: number) => v >= 1000 ? `${v / 1000}k` : `${v}`
 
   return (
-    <section id="roi" className="py-24 lg:py-32 section-divider">
+    <section id="roi" className="pt-24 pb-28 lg:py-32 section-divider relative overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] bg-emerald-900/25 rounded-full blur-[180px]" />
+      </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 bg-emerald-600/10 border border-emerald-600/20 rounded-full px-4 py-2 mb-6">
