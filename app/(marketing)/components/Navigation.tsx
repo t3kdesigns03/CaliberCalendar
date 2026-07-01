@@ -43,12 +43,12 @@ export default function Navigation() {
 
             <Link href="/" className="flex items-center shrink-0" onClick={close}>
               <Image
-                src="/CalCal.png"
+                src="/logo-light.svg"
                 alt="Caliber Calendar"
-                width={180}
-                height={52}
+                width={220}
+                height={64}
                 priority
-                className="h-10 w-auto"
+                className="h-12 w-auto"
               />
             </Link>
 

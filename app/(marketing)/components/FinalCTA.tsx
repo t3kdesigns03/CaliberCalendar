@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { ArrowRight, CheckCircle, TrendingUp, Calendar } from 'lucide-react'
 
 const QUALIFIERS = [
@@ -10,8 +11,16 @@ const QUALIFIERS = [
 export default function FinalCTA() {
   return (
     <section id="book-call" className="py-24 lg:py-32 section-divider relative overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-emerald-700/10 rounded-full blur-[120px]" />
+        {/* Brand watermark */}
+        <Image
+          src="/logo-light.svg"
+          alt=""
+          width={600}
+          height={175}
+          className="absolute -bottom-8 -right-16 w-[500px] opacity-[0.03] select-none"
+        />
       </div>
 
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">

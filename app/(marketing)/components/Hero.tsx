@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowRight, CheckCircle, Shield, Star } from 'lucide-react'
 
 const STATS = [
@@ -32,6 +33,19 @@ export default function Hero() {
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 lg:py-36">
+
+        {/* ── Hero logo lockup ─────────────────────────────── */}
+        <div className="mb-12">
+          <Image
+            src="/logo-light.svg"
+            alt="Caliber Calendar"
+            width={380}
+            height={110}
+            priority
+            className="h-20 sm:h-24 lg:h-28 w-auto"
+          />
+        </div>
+
         <div className="inline-flex items-center gap-2.5 bg-emerald-600/10 border border-emerald-600/25 rounded-full px-4 py-2 mb-10">
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />

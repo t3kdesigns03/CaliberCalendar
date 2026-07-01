@@ -10,7 +10,7 @@ export default function MarketingLayout({ children }: { children: React.ReactNod
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
-              <Image src="/CalCal.png" alt="Caliber Calendar" width={160} height={46} className="h-9 w-auto mb-2" />
+              <Image src="/logo-light.svg" alt="Caliber Calendar" width={200} height={58} className="h-12 w-auto mb-3" />
               <p className="text-slate-600 text-sm">
                 Pay-Per-Show Qualified Appointments for Elite Advisors.
               </p>
