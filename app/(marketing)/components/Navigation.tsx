@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { TrendingUp, Menu, X, ArrowRight } from 'lucide-react'
+import Image from 'next/image'
+import { Menu, X, ArrowRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 const NAV_LINKS = [
@@ -40,13 +41,15 @@ export default function Navigation() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-20">
 
-            <Link href="/" className="flex items-center gap-2.5 group shrink-0" onClick={close}>
-              <div className="w-8 h-8 bg-emerald-600 rounded-lg flex items-center justify-center transition-all group-hover:bg-emerald-500 group-hover:shadow-emerald-sm">
-                <TrendingUp className="w-4 h-4 text-white" strokeWidth={2.5} />
-              </div>
-              <span className="font-bold text-white text-[17px] tracking-tight leading-none">
-                Caliber <span className="text-emerald-400">Calendar</span>
-              </span>
+            <Link href="/" className="flex items-center shrink-0" onClick={close}>
+              <Image
+                src="/CalCal.png"
+                alt="Caliber Calendar"
+                width={180}
+                height={52}
+                priority
+                className="h-10 w-auto"
+              />
             </Link>
 
             <nav className="hidden lg:flex items-center gap-7">

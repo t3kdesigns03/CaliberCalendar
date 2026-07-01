@@ -1,4 +1,5 @@
 import Navigation from './components/Navigation'
+import Image from 'next/image'
 
 export default function MarketingLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -9,9 +10,7 @@ export default function MarketingLayout({ children }: { children: React.ReactNod
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
-              <div className="font-bold text-white text-lg mb-1">
-                Caliber <span className="text-emerald-400">Calendar</span>
-              </div>
+              <Image src="/CalCal.png" alt="Caliber Calendar" width={160} height={46} className="h-9 w-auto mb-2" />
               <p className="text-slate-600 text-sm">
                 Pay-Per-Show Qualified Appointments for Elite Advisors.
               </p>
