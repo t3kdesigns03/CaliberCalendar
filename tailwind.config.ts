@@ -5,40 +5,43 @@ const config: Config = {
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
-    './lib/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
       colors: {
         navy: {
-          deep:   '#0A192F',
-          mid:    '#102A43',
-          light:  '#1B3A5C',
-          border: '#1E3A5F',
+          deep:   '#091E3A',
+          DEFAULT:'#0F2C5A',
+          mid:    '#163462',
+          light:  '#1E4580',
+          border: 'rgba(197,164,110,0.22)',
+        },
+        gold: {
+          DEFAULT: '#C5A46E',
+          light:   '#D4B882',
+          muted:   '#B8976A',
+          badge:   'rgba(197,164,110,0.12)',
+        },
+        cream: {
+          DEFAULT: '#FAF8F5',
+          dark:    '#F2EEE8',
         },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-      },
-      animation: {
-        'fade-up':    'fadeUp 0.6s ease-out both',
-        'fade-in':    'fadeIn 0.5s ease-out both',
-        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-      },
-      keyframes: {
-        fadeUp: {
-          '0%':   { opacity: '0', transform: 'translateY(24px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
-        },
-        fadeIn: {
-          '0%':   { opacity: '0' },
-          '100%': { opacity: '1' },
-        },
+        sans: ['var(--font-sans)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
-        'emerald-glow': '0 0 40px rgba(5,150,105,0.35)',
-        'emerald-sm':   '0 0 20px rgba(5,150,105,0.25)',
-        'card':         '0 4px 24px rgba(0,0,0,0.3)',
+        'gold-glow':   '0 0 40px rgba(197,164,110,0.30)',
+        'gold-sm':     '0 0 20px rgba(197,164,110,0.20)',
+        'card':        '0 2px 16px rgba(15,44,90,0.06), 0 1px 3px rgba(15,44,90,0.04)',
+        'card-hover':  '0 8px 32px rgba(15,44,90,0.10), 0 2px 6px rgba(197,164,110,0.15)',
+        // Legacy
+        'emerald-glow':'0 0 40px rgba(197,164,110,0.30)',
+        'emerald-sm':  '0 0 20px rgba(197,164,110,0.20)',
+      },
+      backgroundImage: {
+        'gradient-gold': 'linear-gradient(135deg, #C5A46E 0%, #D4B882 100%)',
+        'gradient-navy': 'linear-gradient(135deg, #0F2C5A 0%, #091E3A 100%)',
       },
     },
   },

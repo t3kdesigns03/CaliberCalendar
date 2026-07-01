@@ -1,51 +1,75 @@
-import { Ban, DollarSign, Users, TrendingUp, Clock, Layers } from 'lucide-react'
+import { Clock, BookOpen, Users, ShieldCheck, TrendingUp, Heart } from 'lucide-react'
 
 const BENEFITS = [
-  { icon: Ban,       title: 'No More No-Shows',           stat: '97%',    statLabel: 'Show Rate',       description: 'Every appointment is double-confirmed and pre-educated. Prospects know exactly what the call is about and have committed their time. You don\'t pay for ghosts.' },
-  { icon: DollarSign,title: 'Zero Wasted Ad Spend',       stat: '$0',     statLabel: 'Pay if No-Show',  description: 'Unlike Facebook leads or direct mail, you only spend money when a real, qualified prospect actually sits down with you. No guessing. No burning budget on cold lists.' },
-  { icon: Users,     title: 'Genuinely Qualified Prospects',stat: '$500K+',statLabel: 'Min. Assets',    description: '$500K–$2M+ in verified investable assets. Pre-screened for annuity and wealth planning fit. These aren\'t "interested in learning more" forms — these are real buyers.' },
-  { icon: TrendingUp,title: 'Consistent, Scalable Pipeline',stat: '4.2×', statLabel: 'Avg. ROI',        description: 'Set your target volume and we fill your calendar. No feast-or-famine cycles. No slow months. A predictable appointment flow you can actually build a business around.' },
-  { icon: Clock,     title: 'Reclaim Your Selling Time',  stat: '10+',    statLabel: 'Hours Saved/Week',description: 'Stop wasting hours on cold calls, seminars, and unqualified referrals. We handle targeting, pre-education, setting, and confirmation. You show up and run your process.' },
-  { icon: Layers,    title: 'Fully Turnkey System',       stat: '100%',   statLabel: 'Done-For-You',    description: 'From prospect identification to pre-call education to appointment setting and confirmation — the entire system runs without you. Plug in your close rate and scale.' },
+  {
+    icon: Clock,
+    title: 'Asset & Income Snapshot',
+    desc: 'A plain-language picture of what you have, what it could realistically generate in retirement, and where the gaps might be.',
+  },
+  {
+    icon: BookOpen,
+    title: 'Social Security Timing Guidance',
+    desc: 'An educational look at your claiming options, break-even points, and the impact of timing — one of the most important retirement decisions.',
+  },
+  {
+    icon: TrendingUp,
+    title: 'Tax & Withdrawal Strategy Overview',
+    desc: 'Learn how withdrawal order, Roth conversions, and tax-efficient sequencing can meaningfully improve how long your money lasts.',
+  },
+  {
+    icon: ShieldCheck,
+    title: 'Risk & Protection Assessment',
+    desc: 'Understand where your portfolio sits on the risk spectrum and how to think about protecting assets as you approach — or are in — retirement.',
+  },
+  {
+    icon: Heart,
+    title: 'Healthcare & Medicare Clarity',
+    desc: 'Navigate Medicare timing, supplement vs. Advantage decisions, and long-term care planning with clear, educational guidance.',
+  },
+  {
+    icon: Users,
+    title: 'Personal Q&A Time',
+    desc: 'Ask the questions you have been holding. Our team listens without judgment and responds with clarity — not sales language.',
+  },
 ]
 
-export default function BenefitsGrid() {
+export default function WhatYouGet() {
   return (
-    <section id="benefits" className="py-24 lg:py-32 section-divider">
+    <section id="what-you-get" className="py-24 lg:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-emerald-600/10 border border-emerald-600/20 rounded-full px-4 py-2 mb-6">
-            <span className="text-emerald-400 text-sm font-semibold tracking-wide">Why Caliber Calendar</span>
+
+        <div className="text-center mb-14">
+          <div className="navy-badge justify-center mb-6 text-xs font-semibold tracking-widest uppercase">
+            What You Will Receive
           </div>
-          <h2 className="text-4xl sm:text-5xl font-extrabold text-white mb-4 tracking-tight">
-            Built to Fix the Exact Problems{' '}
-            <br className="hidden sm:block" />
-            <span className="text-emerald-400">Elite Advisors Face</span>
+          <h2 className="text-4xl sm:text-5xl font-bold text-[#0F2C5A] mb-4 tracking-tight">
+            Your Review Covers What Matters Most
           </h2>
-          <p className="text-slate-400 text-xl max-w-2xl mx-auto">
-            Every feature exists because a serious producer was losing money without it.
+          <p className="text-slate-500 text-xl max-w-2xl mx-auto">
+            Every free review is personalized to your situation and focused on the topics that
+            actually move the needle in retirement.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {BENEFITS.map(({ icon: Icon, title, description, stat, statLabel }) => (
-            <div
-              key={title}
-              className="group card-gradient-border rounded-2xl p-7 transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
-            >
-              <div className="flex items-start justify-between mb-5">
-                <div className="w-11 h-11 rounded-xl bg-emerald-600/10 border border-emerald-600/20 flex items-center justify-center group-hover:bg-emerald-600/15 transition-colors">
-                  <Icon className="w-5 h-5 text-emerald-400" strokeWidth={2} />
-                </div>
-                <div className="text-right">
-                  <div className="text-2xl font-extrabold text-emerald-400 tabular-nums">{stat}</div>
-                  <div className="text-slate-500 text-xs font-medium">{statLabel}</div>
-                </div>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {BENEFITS.map(({ icon: Icon, title, desc }) => (
+            <div key={title} className="card-premium p-7 group">
+              <div className="w-11 h-11 rounded-xl bg-[#0F2C5A]/[0.07] border border-[#0F2C5A]/[0.12] flex items-center justify-center mb-5 group-hover:bg-[#C5A46E]/10 group-hover:border-[#C5A46E]/25 transition-colors">
+                <Icon className="w-5 h-5 text-[#0F2C5A] group-hover:text-[#C5A46E] transition-colors" />
               </div>
-              <h3 className="text-white font-bold text-base mb-2.5">{title}</h3>
-              <p className="text-slate-400 text-sm leading-relaxed">{description}</p>
+              <h3 className="text-[#0F2C5A] font-bold text-base mb-2">{title}</h3>
+              <p className="text-slate-500 text-sm leading-relaxed">{desc}</p>
             </div>
           ))}
+        </div>
+
+        <div className="mt-12 text-center">
+          <p className="text-slate-400 text-sm">
+            All of this is included in your free, no-obligation retirement review.{' '}
+            <a href="#review-form" className="text-[#C5A46E] font-semibold hover:underline">
+              Request yours today →
+            </a>
+          </p>
         </div>
       </div>
     </section>

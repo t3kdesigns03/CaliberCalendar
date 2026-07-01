@@ -1,140 +1,104 @@
-import { X, Check, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
+import { ArrowRight, FileText } from 'lucide-react'
 
-const ROWS = [
+const GUIDES = [
   {
-    label:  'Show Rate',
-    old:    '20–40% — if they even pick up',
-    new:    '97% average show rate, confirmed',
+    slug: 'social-security-timing',
+    title: 'Social Security Timing',
+    teaser: 'Claiming at 62 vs. 70 can mean a difference of hundreds of thousands of dollars. Learn how to think through your decision.',
+    tag: 'Income Strategy',
   },
   {
-    label:  'Asset Level',
-    old:    'Self-reported or completely unknown',
-    new:    '$500K–$2M+ verified investable assets',
+    slug: 'tax-efficient-retirement-paycheck',
+    title: 'Tax-Efficient Retirement Paycheck',
+    teaser: 'The order in which you draw down accounts matters more than most people realize. Here is what you need to know.',
+    tag: 'Tax Strategy',
   },
   {
-    label:  'Cost Model',
-    old:    'Pay per lead, click, or event — no matter what',
-    new:    'Pay only when they show. No exceptions.',
+    slug: 'sequence-of-returns-protection',
+    title: 'Sequence of Returns',
+    teaser: 'A market downturn in your first years of retirement can be far more damaging than one later on. Learn why — and what to do.',
+    tag: 'Portfolio Risk',
   },
   {
-    label:  'Prospect Mindset',
-    old:    'Cold, confused, no idea why they\'re talking to you',
-    new:    'Pre-educated on wealth planning — ready to engage',
+    slug: 'healthcare-long-term-care-planning',
+    title: 'Healthcare & Long-Term Care',
+    teaser: 'Medicare does not cover everything. Understand your options for coverage gaps and long-term care before you need them.',
+    tag: 'Healthcare',
   },
   {
-    label:  'Your Time',
-    old:    'Hours chasing, confirming, rescheduling',
-    new:    'Zero. We target, educate, set, and confirm.',
+    slug: 'legacy-estate-simplification',
+    title: 'Legacy & Estate Simplification',
+    teaser: 'Making things easy for the people you love is one of the most generous things you can do. Start here.',
+    tag: 'Legacy',
   },
   {
-    label:  'Pipeline',
-    old:    'Feast-or-famine. Completely unpredictable.',
-    new:    '10–50+ confirmed appointments per month',
+    slug: 'evaluating-a-financial-advisor',
+    title: 'Evaluating a Financial Advisor',
+    teaser: 'Not all advisors are the same. Know what to look for, what to ask, and what red flags to watch for before you sign anything.',
+    tag: 'Advisor Guidance',
   },
 ]
 
-const PAIN_POINTS = [
-  'Burning $3,000 on a seminar dinner for 2 good prospects',
-  'Facebook leads who have $40K in a 401(k) and "just want info"',
-  'Cold calling lists with 15% contact rates and zero qualification',
-  'Direct mail with no accountability and no follow-up tracking',
-  'Referrals you can\'t scale no matter how good your service is',
-]
-
-export default function ComparisonSection() {
+export default function ResourcesHub() {
   return (
-    <section className="py-24 lg:py-32 section-divider relative overflow-hidden">
-      {/* Subtle background accent */}
-      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-        <div className="absolute top-0 left-1/4 w-[600px] h-[400px] bg-red-900/5 rounded-full blur-[120px]" />
-        <div className="absolute bottom-0 right-1/4 w-[600px] h-[400px] bg-emerald-900/10 rounded-full blur-[120px]" />
-      </div>
+    <section id="resources" className="py-24 lg:py-32 bg-[#FAF8F5]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        {/* Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-red-600/10 border border-red-600/20 rounded-full px-4 py-2 mb-6">
-            <span className="text-red-400 text-sm font-semibold tracking-wide">The Hard Truth</span>
+        <div className="text-center mb-14">
+          <div className="navy-badge justify-center mb-6 text-xs font-semibold tracking-widest uppercase">
+            Free Educational Resources
           </div>
-          <h2 className="text-4xl sm:text-5xl font-extrabold text-white mb-5 tracking-tight">
-            Every Other Lead Source Has{' '}
-            <span className="text-red-400">a Fatal Flaw.</span>
+          <h2 className="text-4xl sm:text-5xl font-bold text-[#0F2C5A] mb-4 tracking-tight">
+            Learn at Your Own Pace
           </h2>
-          <p className="text-slate-400 text-xl max-w-2xl mx-auto">
-            You already know this. You've spent the money and lived through the disappointment.
-            Here's what that actually looks like — and what we built instead.
+          <p className="text-slate-500 text-xl max-w-2xl mx-auto">
+            Our retirement guides cover the topics that matter most — written in plain language,
+            with no products to sell and no agenda.
           </p>
         </div>
 
-        {/* Pain points row */}
-        <div className="bg-red-950/20 border border-red-900/30 rounded-2xl p-7 mb-10">
-          <p className="text-red-300 font-semibold text-sm uppercase tracking-[0.12em] mb-5">Sound familiar?</p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            {PAIN_POINTS.map((point) => (
-              <div key={point} className="flex items-start gap-2.5">
-                <X className="w-4 h-4 text-red-500 shrink-0 mt-0.5" strokeWidth={2.5} />
-                <span className="text-slate-400 text-sm leading-relaxed">{point}</span>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-12">
+          {GUIDES.map(({ slug, title, teaser, tag }) => (
+            <Link
+              key={slug}
+              href={`/resources/${slug}`}
+              className="card-premium p-7 group block"
+            >
+              <div className="flex items-start justify-between mb-4">
+                <div className="w-10 h-10 rounded-lg bg-[#C5A46E]/10 border border-[#C5A46E]/20 flex items-center justify-center shrink-0">
+                  <FileText className="w-4.5 h-4.5 text-[#C5A46E]" />
+                </div>
+                <span className="text-[#C5A46E] text-xs font-semibold tracking-wide bg-[#C5A46E]/8 border border-[#C5A46E]/15 rounded-full px-2.5 py-1">
+                  {tag}
+                </span>
               </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Comparison table */}
-        <div className="rounded-2xl overflow-hidden border border-white/[0.08]">
-          {/* Column headers */}
-          <div className="grid grid-cols-3 bg-[#060F1C]">
-            <div className="px-6 py-4 text-slate-600 text-xs font-semibold uppercase tracking-[0.12em]">Category</div>
-            <div className="px-6 py-4 border-l border-white/[0.06]">
-              <span className="text-slate-500 text-xs font-bold uppercase tracking-[0.12em]">Everything Else</span>
-            </div>
-            <div className="px-6 py-4 border-l border-emerald-600/20 bg-emerald-600/[0.06]">
-              <div className="flex items-center gap-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                <span className="text-emerald-400 text-xs font-bold uppercase tracking-[0.12em]">Caliber Calendar</span>
+              <h3 className="text-[#0F2C5A] font-bold text-base mb-2 group-hover:text-[#C5A46E] transition-colors">
+                {title}
+              </h3>
+              <p className="text-slate-500 text-sm leading-relaxed mb-4">{teaser}</p>
+              <div className="flex items-center gap-1.5 text-[#C5A46E] text-sm font-semibold">
+                Read Guide <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
               </div>
-            </div>
-          </div>
-
-          {/* Rows */}
-          {ROWS.map(({ label, old, new: newVal }, i) => (
-            <div key={label} className={`grid grid-cols-3 border-t border-white/[0.06] ${i % 2 === 0 ? 'bg-white/[0.01]' : ''}`}>
-              <div className="px-6 py-5 flex items-center">
-                <span className="text-white font-semibold text-sm">{label}</span>
-              </div>
-              <div className="px-6 py-5 border-l border-white/[0.06] flex items-start gap-2.5">
-                <X className="w-3.5 h-3.5 text-red-500 shrink-0 mt-0.5" strokeWidth={2.5} />
-                <span className="text-slate-500 text-sm leading-relaxed">{old}</span>
-              </div>
-              <div className="px-6 py-5 border-l border-emerald-600/20 bg-emerald-600/[0.04] flex items-start gap-2.5">
-                <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" strokeWidth={2.5} />
-                <span className="text-emerald-100 text-sm font-medium leading-relaxed">{newVal}</span>
-              </div>
-            </div>
+            </Link>
           ))}
         </div>
 
-        {/* Bottom CTA strip */}
-        <div className="mt-10 flex flex-col sm:flex-row items-center justify-between gap-6 bg-emerald-600/[0.08] border border-emerald-600/25 rounded-2xl px-7 py-6">
-          <div>
-            <p className="text-white font-bold text-lg mb-1">Ready to stop gambling on lead gen?</p>
-            <p className="text-slate-400 text-sm">See exactly what your ROI looks like with Caliber Calendar — before you commit to anything.</p>
-          </div>
-          <div className="flex flex-col sm:flex-row gap-3 shrink-0">
-            <Link
-              href="#roi"
-              className="inline-flex items-center justify-center gap-2 bg-white/[0.06] hover:bg-white/10 border border-white/20 text-white font-semibold px-5 py-3 rounded-xl text-sm transition-all"
-            >
-              Run the ROI Calculator
-            </Link>
-            <Link
-              href="#book-call"
-              className="inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-5 py-3 rounded-xl text-sm transition-all hover:shadow-emerald-glow group"
-            >
-              Book Discovery Call <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
-            </Link>
-          </div>
+        <div className="text-center">
+          <Link
+            href="/resources"
+            className="btn-navy inline-flex px-8 py-4 text-sm group"
+          >
+            View All Resources
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+          </Link>
+          <p className="mt-4 text-slate-400 text-sm">
+            Or{' '}
+            <a href="#review-form" className="text-[#C5A46E] font-semibold hover:underline">
+              request your personalized free review
+            </a>{' '}
+            and get answers specific to your situation.
+          </p>
         </div>
       </div>
     </section>

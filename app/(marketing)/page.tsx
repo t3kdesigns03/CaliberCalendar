@@ -1,24 +1,24 @@
 import Hero               from './components/Hero'
-import TrustBar           from './components/TrustBar'
+import RetirementChallenge from './components/TrustBar'
 import HowItWorks         from './components/HowItWorks'
-import BenefitsGrid       from './components/BenefitsGrid'
-import ComparisonSection  from './components/ComparisonSection'
-import ROICalculator      from './components/ROICalculator'
-import SocialProof        from './components/SocialProof'
+import WhatYouGet         from './components/BenefitsGrid'
+import ResourcesHub       from './components/ComparisonSection'
+import ClientStories      from './components/SocialProof'
 import FAQAccordion       from './components/FAQAccordion'
+import ReviewRequestForm  from './components/ROICalculator'
 import FinalCTA           from './components/FinalCTA'
 
 export default function HomePage() {
   return (
     <>
       <Hero />
-      <TrustBar />
+      <RetirementChallenge />
       <HowItWorks />
-      <BenefitsGrid />
-      <ComparisonSection />
-      <ROICalculator />
-      <SocialProof />
+      <WhatYouGet />
+      <ResourcesHub />
+      <ClientStories />
       <FAQAccordion />
+      <ReviewRequestForm />
       <FinalCTA />
     </>
   )

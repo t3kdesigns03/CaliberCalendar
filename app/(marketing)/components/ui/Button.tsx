@@ -1,49 +1,41 @@
 import { cn } from '@/lib/utils'
 import { ButtonHTMLAttributes, forwardRef } from 'react'
 
-export type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost'
-export type ButtonSize    = 'sm' | 'md' | 'lg'
-
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: ButtonVariant
-  size?:    ButtonSize
-}
-
-const variantClasses: Record<ButtonVariant, string> = {
+const variants = {
   primary:
-    'bg-emerald-600 hover:bg-emerald-500 text-white font-semibold shadow-emerald-sm hover:shadow-emerald-glow hover:-translate-y-0.5',
+    'bg-[#C5A46E] hover:bg-[#D4B882] text-[#0F2C5A] font-bold shadow-gold-sm hover:shadow-gold-glow hover:-translate-y-0.5',
   secondary:
-    'bg-[#102A43] hover:bg-[#1B3A5C] text-white font-semibold border border-white/10 hover:border-white/20',
-  outline:
-    'border border-white/25 hover:border-white/50 text-white hover:bg-white/5 font-semibold',
+    'bg-white/[0.06] hover:bg-white/[0.10] text-white border border-white/[0.12]',
   ghost:
-    'text-slate-300 hover:text-white hover:bg-white/5 font-medium',
+    'bg-transparent hover:bg-white/[0.06] text-slate-300 hover:text-white',
+  outline:
+    'bg-transparent border-2 border-[#C5A46E]/50 text-[#C5A46E] hover:bg-[#C5A46E]/08 hover:border-[#C5A46E]',
 }
 
-const sizeClasses: Record<ButtonSize, string> = {
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+  variant?: keyof typeof variants
+  size?: 'sm' | 'md' | 'lg'
+}
+
+const sizes = {
   sm: 'px-4 py-2 text-sm rounded-lg',
-  md: 'px-6 py-3 text-base rounded-xl',
-  lg: 'px-8 py-4 text-lg rounded-xl',
+  md: 'px-6 py-3 text-sm rounded-xl',
+  lg: 'px-8 py-4 text-base rounded-xl',
 }
 
-const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant = 'primary', size = 'md', children, ...props }, ref) => (
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ className, variant = 'primary', size = 'md', ...props }, ref) => (
     <button
       ref={ref}
       className={cn(
-        'inline-flex items-center justify-center gap-2 transition-all duration-200 ease-out',
-        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0A192F]',
-        'disabled:opacity-50 disabled:pointer-events-none active:scale-[0.98]',
-        variantClasses[variant],
-        sizeClasses[size],
-        className
+        'inline-flex items-center justify-center gap-2 font-semibold transition-all duration-200 active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed',
+        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C5A46E] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0F2C5A]',
+        variants[variant],
+        sizes[size],
+        className,
       )}
       {...props}
-    >
-      {children}
-    </button>
+    />
   )
 )
-
 Button.displayName = 'Button'
-export { Button }

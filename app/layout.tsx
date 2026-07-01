@@ -2,24 +2,25 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Caliber Calendar | Pay-Per-Show Qualified Appointments for Elite Advisors',
+  title: 'JBAdvantage | Free Retirement Asset Review & Retirement Goal Support',
   description:
-    'Only pay for qualified wealth and annuity appointments that actually show up. Pre-educated $500K–$2M+ asset prospects. Professionally set. You close.',
+    'Get a complimentary, no-obligation review of your retirement assets and income plan. Independent educational support for pre-retirees and retirees — no pressure, no cost.',
   keywords: [
-    'financial advisor appointments', 'annuity leads', 'qualified appointments',
-    'pay per show', 'wealth management leads', 'annuity appointment setting',
+    'free retirement review', 'retirement asset review', 'retirement planning help',
+    'Social Security timing', 'retirement income planning', 'no-cost retirement review',
+    'pre-retiree support', 'retirement education', 'JBAdvantage',
   ],
   openGraph: {
-    title: 'Caliber Calendar | Pay-Per-Show Qualified Appointments',
-    description: 'Pre-educated $500K–$2M+ asset prospects. You close. Pay only on show.',
+    title: 'JBAdvantage | Free Retirement Asset Review & Goal Support',
+    description: 'Complimentary, no-pressure retirement asset review and ongoing educational support for pre-retirees and retirees.',
     type: 'website',
-    url: 'https://calibercalendar.com',
-    siteName: 'Caliber Calendar',
+    url: 'https://caliber.t3kdesigns.app',
+    siteName: 'JBAdvantage',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Caliber Calendar | Pay-Per-Show Qualified Appointments',
-    description: 'Pre-educated $500K–$2M+ asset prospects. Zero upfront risk.',
+    title: 'JBAdvantage | Free Retirement Asset Review',
+    description: 'Independent educational support for your retirement goals — no cost, no pressure.',
   },
   robots: { index: true, follow: true },
 }
@@ -27,26 +28,27 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  themeColor: '#0A192F',
+  themeColor: '#0F2C5A',
 }
 
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'ProfessionalService',
-  name: 'Caliber Calendar',
+  '@type': 'FinancialService',
+  name: 'JBAdvantage',
   description:
-    'Pay-Per-Show qualified appointment service for elite financial advisors and annuity producers. Pre-educated $500K+ asset prospects, confirmed and showing.',
-  url: 'https://calibercalendar.com',
-  serviceType: 'Appointment Setting Service',
+    'Independent educational retirement support service. Complimentary asset reviews and goal guidance for pre-retirees and retirees, with optional introductions to vetted advisors.',
+  url: 'https://caliber.t3kdesigns.app',
+  serviceType: 'Retirement Education & Support',
   areaServed: 'United States',
   audience: {
     '@type': 'Audience',
-    audienceType: 'Financial Advisors, Annuity Producers, Wealth Managers',
+    audienceType: 'Pre-retirees, Retirees, Adults ages 55-75+',
   },
   offers: {
     '@type': 'Offer',
-    description: 'Pay-per-show qualified appointments with $500K+ investable asset prospects',
-    pricingType: 'PerUnit',
+    description: 'Complimentary retirement asset review and educational support',
+    price: '0',
+    priceCurrency: 'USD',
   },
 }
 
@@ -59,7 +61,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="antialiased bg-[#0A192F] text-white">{children}</body>
+      <body className="antialiased">{children}</body>
     </html>
   )
 }
