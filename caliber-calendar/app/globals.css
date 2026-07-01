@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Inter font ─────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+/* ── Base reset ─────────────────────────────────────────── */
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: #0A192F;
+    color: #F8FAFC;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  ::selection {
+    background-color: rgba(5, 150, 105, 0.35);
+    color: #ffffff;
+  }
+}
+
+/* ── Utilities ──────────────────────────────────────────── */
+@layer utilities {
+  /* Glassmorphism nav */
+  .glass-nav {
+    background: rgba(10, 25, 47, 0.82);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  }
+
+  /* Card glass fill */
+  .card-glass {
+    background: rgba(16, 42, 67, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(8px);
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    background: linear-gradient(135deg, #ffffff 0%, #34d399 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Section divider */
+  .section-divider {
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  /* Emerald glow on buttons */
+  .emerald-glow {
+    box-shadow: 0 0 30px rgba(5, 150, 105, 0.4);
+  }
+
+  .emerald-glow-sm {
+    box-shadow: 0 0 16px rgba(5, 150, 105, 0.3);
+  }
+}
+
+/* ── Range slider (ROI Calculator) ─────────────────────── */
+input[type='range'] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 9999px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #059669;
+  border: 3px solid #0A192F;
+  box-shadow: 0 0 0 2px #059669, 0 2px 8px rgba(5,150,105,0.5);
+  cursor: pointer;
+  transition: box-shadow 0.15s ease, background 0.15s ease;
+}
+
+input[type='range']::-webkit-slider-thumb:hover,
+input[type='range']::-webkit-slider-thumb:active {
+  background: #10b981;
+  box-shadow: 0 0 0 4px rgba(5,150,105,0.3), 0 2px 12px rgba(5,150,105,0.6);
+}
+
+input[type='range']::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #059669;
+  border: 3px solid #0A192F;
+  box-shadow: 0 0 0 2px #059669;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+input[type='range']::-moz-range-thumb:hover {
+  background: #10b981;
+  box-shadow: 0 0 0 4px rgba(5,150,105,0.3);
+}
+
+/* ── Accordion ──────────────────────────────────────────── */
+.accordion-content {
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.3s ease,
+              padding 0.25s ease;
+}
+
+/* ── Scrollbar (webkit) ─────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0A192F;
+}
+::-webkit-scrollbar-thumb {
+  background: #1E3A5F;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2a5280;
+}

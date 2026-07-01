@@ -1,0 +1,16 @@
+[build]
+  command   = "npm run build"
+  publish   = ".next"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+# Redirect bare http → https (handled by Netlify automatically, but explicit is better)
+[[redirects]]
+  from   = "http://calibercalendar.com/*"
+  to     = "https://calibercalendar.com/:splat"
+  status = 301
+  force  = true
