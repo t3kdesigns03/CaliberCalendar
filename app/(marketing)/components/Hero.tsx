@@ -39,10 +39,10 @@ export default function Hero() {
           <Image
             src="/logo-light.svg"
             alt="Caliber Calendar"
-            width={380}
-            height={110}
+            width={260}
+            height={68}
             priority
-            className="h-20 sm:h-24 lg:h-28 w-auto"
+            className="h-14 sm:h-16 w-auto max-w-[320px]"
           />
         </div>
 

@@ -45,10 +45,10 @@ export default function Navigation() {
               <Image
                 src="/logo-light.svg"
                 alt="Caliber Calendar"
-                width={220}
-                height={64}
+                width={260}
+                height={68}
                 priority
-                className="h-12 w-auto"
+                className="h-9 w-auto max-w-[200px]"
               />
             </Link>
 
