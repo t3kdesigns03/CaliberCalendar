@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Contact</title></head>
+<body>
+  <!--
+    Static form purely for Netlify's post-processing scanner to detect.
+    Actual submission comes from the Next.js client component.
+  -->
+  <form name="advisor-application" data-netlify="true" netlify-honeypot="bot-field" hidden>
+    <input type="hidden" name="form-name" value="advisor-application" />
+    <input name="bot-field" />
+    <input name="full-name"    type="text"  />
+    <input name="email"        type="email" />
+    <input name="phone"        type="tel"   />
+    <input name="production"   type="text"  />
+    <input name="appointments" type="text"  />
+    <input name="message"      type="text"  />
+  </form>
+</body>
+</html>

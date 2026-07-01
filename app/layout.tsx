@@ -30,9 +30,34 @@ export const viewport: Viewport = {
   themeColor: '#0A192F',
 }
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'Caliber Calendar',
+  description: 'Pay-Per-Show qualified appointment service for elite financial advisors and annuity producers. Pre-educated $500K–$2M+ asset prospects, confirmed and showing.',
+  url: 'https://calibercalendar.com',
+  serviceType: 'Appointment Setting Service',
+  areaServed: 'United States',
+  audience: {
+    '@type': 'Audience',
+    audienceType: 'Financial Advisors, Annuity Producers, Wealth Managers',
+  },
+  offers: {
+    '@type': 'Offer',
+    description: 'Pay-per-show qualified appointments with $500K+ investable asset prospects',
+    pricingType: 'PerUnit',
+  },
+}
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="antialiased bg-[#0A192F] text-white">{children}</body>
     </html>
   )
