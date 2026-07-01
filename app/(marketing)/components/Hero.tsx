@@ -57,7 +57,7 @@ export default function Hero() {
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 mb-14">
+          <div className="flex flex-col sm:flex-row gap-4 mb-5">
             <Link
               href="#review-form"
               className="btn-gold text-base px-8 py-4 group"
@@ -70,6 +70,17 @@ export default function Hero() {
               className="btn-outline-gold text-base px-8 py-4"
             >
               Explore Retirement Resources
+            </Link>
+          </div>
+
+          {/* Soft risk profile link */}
+          <div className="mb-10">
+            <Link
+              href="/risk-profile"
+              className="inline-flex items-center gap-1.5 text-[#C5A46E]/80 hover:text-[#C5A46E] text-sm font-medium transition-colors"
+            >
+              <span className="w-1 h-1 rounded-full bg-[#C5A46E]/50 inline-block" />
+              Or take our free 2-min retirement risk profile →
             </Link>
           </div>
 

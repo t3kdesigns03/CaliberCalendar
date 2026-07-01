@@ -2,6 +2,7 @@ import Hero               from './components/Hero'
 import RetirementChallenge from './components/TrustBar'
 import HowItWorks         from './components/HowItWorks'
 import WhatYouGet         from './components/BenefitsGrid'
+import RiskProfileBanner  from './components/RiskProfileBanner'
 import ResourcesHub       from './components/ComparisonSection'
 import ClientStories      from './components/SocialProof'
 import FAQAccordion       from './components/FAQAccordion'
@@ -15,6 +16,7 @@ export default function HomePage() {
       <RetirementChallenge />
       <HowItWorks />
       <WhatYouGet />
+      <RiskProfileBanner />
       <ResourcesHub />
       <ClientStories />
       <FAQAccordion />
